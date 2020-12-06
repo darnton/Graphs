@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.1.1</Version>
+    <Authors>Bernard Darnton</Authors>
+    <Product>Graphs</Product>
+    <Description>Library for handling generic graphs and generating DGML files</Description>
+    <Copyright>2020 Bernard Darnton</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/darnton/Graphs</RepositoryUrl>
+    <AssemblyVersion>0.0.1.1</AssemblyVersion>
+    <FileVersion>0.0.1.1</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\user\source\repos\Graphs\Darnton.Graphs\Darnton.Graphs.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

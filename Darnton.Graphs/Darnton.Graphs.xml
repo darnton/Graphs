@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darnton.Graphs</name>
+    </assembly>
+    <members>
+        <member name="T:Darnton.Graphs.DgmlGenerator`1">
+            <summary>
+            Generates a DGML document from a Graph.
+            This abstract class contains the scaffolding for generating the XML document.
+            </summary>
+            <typeparam name="T">The GraphNode type.</typeparam>
+        </member>
+        <member name="M:Darnton.Graphs.DgmlGenerator`1.Generate">
+            <summary>
+            Generates the DGML document.
+            </summary>
+            <returns>The XDocument containing the DGML</returns>
+        </member>
+        <member name="T:Darnton.Graphs.Graph`1">
+            <summary>
+            A generic directed graph.
+            </summary>
+            <typeparam name="T">The node type of the graph.</typeparam>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.#ctor">
+            <summary>
+            Constructs an empty Graph.
+            </summary>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.#ctor(Darnton.Graphs.GraphNodeList{`0})">
+            <summary>
+            Constructs a new Graph from the supplied set of nodes.
+            </summary>
+            <param name="nodeSet">The initial set of nodes for the graph.</param>
+        </member>
+        <member name="P:Darnton.Graphs.Graph`1.Nodes">
+            <summary>
+            A <see cref="T:Darnton.Graphs.GraphNodeList`1"/> of the Graphs nodes.
+            </summary>
+        </member>
+        <member name="P:Darnton.Graphs.Graph`1.Count">
+            <summary>
+            Gets the number of nodes in the graph.
+            </summary>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.AddNode(Darnton.Graphs.GraphNode{`0})">
+            <summary>
+            Adds a node to the graph if it has not already been added.
+            </summary>
+            <param name="node">The node to be added.</param>
+            <returns>The node that was added.</returns>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.AddNode(`0)">
+            <summary>
+            Creates a node and adds it the graph if a node with the given has not already been added.
+            </summary>
+            <param name="value">The value of the node to be added.</param>
+            <returns>The node that was added.</returns>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.AddDirectedEdge(Darnton.Graphs.GraphNode{`0},Darnton.Graphs.GraphNode{`0})">
+            <summary>
+            Adds a directed edge to the graph along with source and destination nodes
+            if they are not already part of the graph.
+            </summary>
+            <param name="from">The source node for the edge.</param>
+            <param name="to">The destination node for the edge.</param>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.AddDirectedEdge(`0,`0)">
+            <summary>
+            Adds a directed edge to the graph along with source and destination nodes
+            if they are not already part of the graph.
+            </summary>
+            <param name="from">The value of the source node for the edge.</param>
+            <param name="to">The value of the destination node for the edge.</param>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.Clear">
+            <summary>
+            Removes all nodes from the graph.
+            </summary>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.Contains(Darnton.Graphs.GraphNode{`0})">
+            <summary>
+            Determines whether a node is part of the graph.
+            </summary>
+            <param name="node">The node to be tested.</param>
+            <returns>A boolean indicating the presence of the node.</returns>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.Contains(`0)">
+            <summary>
+            Determines whether a node with a given value is part of the graph.
+            </summary>
+            <param name="value">The value to be tested.</param>
+            <returns>A boolean indicating the presence of a node with the given value.</returns>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.Remove(`0)">
+            <summary>
+            Removes a node from the graph if it is present along with all associated edges.
+            </summary>
+            <param name="value">The node to be removed.</param>
+            <returns>A boolean indicating whether a node was removed.</returns>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darnton.Graphs.Graph`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darnton.Graphs.GraphNode`1">
+            <summary>
+            A generic graph node.
+            </summary>
+            <typeparam name="T">The type of the node value.</typeparam>
+        </member>
+        <member name="P:Darnton.Graphs.GraphNode`1.Value">
+            <summary>
+            The value of the node.
+            </summary>
+        </member>
+        <member name="M:Darnton.Graphs.GraphNode`1.#ctor(`0)">
+            <summary>
+            Constructs a GraphNode with the given value.
+            </summary>
+            <param name="value">The value of the node.</param>
+        </member>
+        <member name="M:Darnton.Graphs.GraphNode`1.#ctor(`0,Darnton.Graphs.GraphNodeList{`0},Darnton.Graphs.GraphNodeList{`0})">
+            <summary>
+            Constructs a GraphNode with the given value and directed edges.
+            </summary>
+            <param name="value">The value of the node.</param>
+            <param name="inList">The <see cref="T:Darnton.Graphs.GraphNodeList`1"/> of source nodes with edges into this node.</param>
+            <param name="outList">The <see cref="T:Darnton.Graphs.GraphNodeList`1"/> of destination nodes with edges out of this node.</param>
+        </member>
+        <member name="P:Darnton.Graphs.GraphNode`1.InList">
+            <summary>
+            Gets the list of nodes that have edges directed to this node.
+            </summary>
+        </member>
+        <member name="P:Darnton.Graphs.GraphNode`1.OutList">
+            <summary>
+            Gets the list of nodes that edges directed from this node.
+            </summary>
+        </member>
+        <member name="T:Darnton.Graphs.GraphNodeList`1">
+            <summary>
+            A list of generic graph nodes.
+            </summary>
+            <typeparam name="T">The type of the node value.</typeparam>
+        </member>
+        <member name="M:Darnton.Graphs.GraphNodeList`1.#ctor">
+            <summary>
+            Constructs an empty GraphNodeList.
+            </summary>
+        </member>
+        <member name="M:Darnton.Graphs.GraphNodeList`1.Add(`0)">
+            <summary>
+            Creates a new GraphNode with the supplied value and adds it to the end of the GraphNodeList.
+            </summary>
+            <param name="value">The value of the new node.</param>
+        </member>
+        <member name="M:Darnton.Graphs.GraphNodeList`1.FindByValue(`0)">
+            <summary>
+            Searches for a node for the given value if one is present in the list.
+            </summary>
+            <param name="value">The value to be searched for.</param>
+            <returns>The node if one is present and null if not.</returns>
+        </member>
+    </members>
+</doc>
